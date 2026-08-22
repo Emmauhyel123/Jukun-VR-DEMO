@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The VR Experience &mdash; JukunVR</title>
+    <meta name="description" content="What's inside the JukunVR headset experience: environment, dancing, and history.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%231B2C8C' stroke='%23D4AF37' stroke-width='6'/%3E%3Ccircle cx='50' cy='50' r='14' fill='%23D4AF37'/%3E%3C/svg%3E">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jukun: {
+                            royal:      '#1B2C8C',
+                            royaldeep:  '#0A1240',
+                            royallight: '#4A5FD6',
+                            gold:       '#D4AF37',
+                            ivory:      '#F6F7FC',
+                            ink:        '#0B0E24'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to right bottom, rgba(10,18,64,0.94), rgba(27,44,140,0.85)), url('https://images.unsplash.com/photo-1542869781-a272dcbc082f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { background-color: #F6F7FC; }
+
+        .fade-in-up {
+            animation: fadeInUp 0.9s ease-out forwards;
+            opacity: 0;
+            transform: translateY(18px);
+        }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+
+        /* --- Signature motif: the woven "aso-royal" trim band ---
+           A diagonal blue / white / gold pinstripe, evoking the weave on
+           Jukun ceremonial cloth. Used as a structural seam, not decoration:
+           it marks every place one part of the site hands off to the next. */
+        .woven-band {
+            height: 10px;
+            background: repeating-linear-gradient(
+                45deg,
+                #1B2C8C 0px,  #1B2C8C 16px,
+                #ffffff 16px, #ffffff 20px,
+                #D4AF37 20px, #D4AF37 24px,
+                #ffffff 24px, #ffffff 28px
+            );
+        }
+        .woven-band-thin {
+            height: 5px;
+            background: repeating-linear-gradient(
+                45deg,
+                #D4AF37 0px, #D4AF37 8px,
+                #ffffff 8px, #ffffff 11px,
+                #1B2C8C 11px, #1B2C8C 19px
+            );
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0A1240; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #b5952f; }
+
+        .crest {
+            width: 44px; height: 44px; border-radius: 9999px;
+            background: radial-gradient(circle at 35% 30%, #4A5FD6, #1B2C8C 60%, #0A1240 100%);
+            border: 2px solid #D4AF37;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 0 3px rgba(212,175,55,0.15);
+        }
+
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: ''; position: absolute; left: 0; bottom: -6px;
+            width: 0%; height: 2px; background: #D4AF37;
+            transition: width 0.25s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link.active { color: #ffffff; }
+    </style>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden text-jukun-ink">
+
+    <nav class="fixed w-full z-50 bg-jukun-royaldeep/95 backdrop-blur-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center gap-3">
+                    <span class="crest"><i class="fa-solid fa-vr-cardboard text-jukun-gold text-lg"></i></span>
+                    <span class="font-serif font-bold text-xl text-white tracking-wider">JUKUN<span class="text-jukun-gold">VR</span></span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium">Home</a>
+                    <a href="heritage.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium">Heritage</a>
+                    <a href="experience.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium active text-white">VR Experience</a>
+                    <a href="download.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium">Download</a>
+                    <a href="contact.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium">Contact</a>
+                    <a href="download.html" class="bg-jukun-gold text-jukun-ink px-6 py-2 rounded-full font-bold hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(212,175,55,0.35)] hover:shadow-[0_0_25px_rgba(212,175,55,0.55)] transform hover:-translate-y-0.5">
+                        Get the App
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-200 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-jukun-royaldeep border-t border-white/10">
+            <div class="px-4 pt-3 pb-4 space-y-1">
+                <a href="index.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg">Home</a>
+                <a href="heritage.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg">Heritage</a>
+                <a href="experience.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg text-jukun-gold">VR Experience</a>
+                <a href="download.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg">Download</a>
+                <a href="contact.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg">Contact</a>
+                <a href="download.html" class="block px-4 py-3 text-base font-bold text-jukun-ink bg-jukun-gold rounded-lg mt-3 text-center">Get the App</a>
+            </div>
+        </div>
+        <div class="woven-band-thin"></div>
+    </nav>
+
+    <header class="relative pt-40 pb-24 bg-jukun-royal overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.07] bg-[radial-gradient(circle_at_80%_20%,white,transparent_40%)]"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <span class="text-jukun-gold font-semibold tracking-[0.2em] uppercase text-sm">The VR Experience</span>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white mt-4 mb-6 leading-tight">
+                Inside the <span class="text-jukun-gold">Virtual Reality</span>
+            </h1>
+            <p class="text-blue-100 text-lg max-w-2xl mx-auto mb-8">
+                Put on your headset and be transported to the court of the Aku Uka. Participate, observe, and learn
+                the history behind every movement.
+            </p>
+            <button onclick="openVideoModal()" class="px-7 py-3.5 bg-jukun-gold text-jukun-ink font-bold rounded-full hover:bg-yellow-400 transition-all inline-flex items-center gap-2">
+                <i class="fa-solid fa-play"></i> Watch Trailer
+            </button>
+        </div>
+        <div class="woven-band absolute bottom-0 left-0 right-0"></div>
+    </header>
+
+    <section class="py-24 bg-jukun-ivory">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white border border-jukun-royal/10 p-8 rounded-2xl hover:border-jukun-gold/60 hover:shadow-xl transition-all group">
+                    <div class="w-16 h-16 bg-jukun-royal rounded-xl flex items-center justify-center text-jukun-gold mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(27,44,140,0.25)]">
+                        <i class="fa-solid fa-street-view text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-serif text-jukun-ink mb-3">360&deg; Environment</h3>
+                    <p class="text-gray-600 leading-relaxed">Meticulously recreated environments of Wukari, including the festival grounds and traditional architecture.</p>
+                </div>
+                <div class="bg-white border border-jukun-royal/10 p-8 rounded-2xl hover:border-jukun-gold/60 hover:shadow-xl transition-all group relative transform md:-translate-y-4">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-jukun-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="w-16 h-16 bg-jukun-royal rounded-xl flex items-center justify-center text-jukun-gold mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(27,44,140,0.25)]">
+                        <i class="fa-solid fa-hands-holding-circle text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-serif text-jukun-ink mb-3">Interactive Dancing</h3>
+                    <p class="text-gray-600 leading-relaxed">Follow the rhythm. Use your VR controllers to match the gestures of the Keku dancers and learn the steps.</p>
+                </div>
+                <div class="bg-white border border-jukun-royal/10 p-8 rounded-2xl hover:border-jukun-gold/60 hover:shadow-xl transition-all group">
+                    <div class="w-16 h-16 bg-jukun-royal rounded-xl flex items-center justify-center text-jukun-gold mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(27,44,140,0.25)]">
+                        <i class="fa-solid fa-book-open-reader text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-serif text-jukun-ink mb-3">Historical Context</h3>
+                    <p class="text-gray-600 leading-relaxed">Interactive nodes provide spoken history about the significance of the music, the attire, and the Kwararafa lineage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="woven-band-thin"></div>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-jukun-royal font-semibold tracking-[0.2em] uppercase text-xs">A Single Session</span>
+                <h2 class="text-4xl font-serif font-bold text-jukun-ink mt-3">How a Visit Unfolds</h2>
+            </div>
+            <ol class="space-y-8">
+                <li class="flex gap-6 items-start">
+                    <span class="shrink-0 w-10 h-10 rounded-full bg-jukun-royal text-white font-serif font-bold flex items-center justify-center">1</span>
+                    <div>
+                        <h4 class="font-bold text-jukun-ink text-lg mb-1">Arrive at the festival grounds</h4>
+                        <p class="text-gray-600">You step into the 360&deg; recreation of Wukari, with the Aku Uka's court set around you.</p>
+                    </div>
+                </li>
+                <li class="flex gap-6 items-start">
+                    <span class="shrink-0 w-10 h-10 rounded-full bg-jukun-royal text-white font-serif font-bold flex items-center justify-center">2</span>
+                    <div>
+                        <h4 class="font-bold text-jukun-ink text-lg mb-1">Watch the Keku dancers</h4>
+                        <p class="text-gray-600">Motion-captured performers move through the ceremony at full scale, with spatial audio recorded live.</p>
+                    </div>
+                </li>
+                <li class="flex gap-6 items-start">
+                    <span class="shrink-0 w-10 h-10 rounded-full bg-jukun-royal text-white font-serif font-bold flex items-center justify-center">3</span>
+                    <div>
+                        <h4 class="font-bold text-jukun-ink text-lg mb-1">Match the gestures yourself</h4>
+                        <p class="text-gray-600">Pick up the rhythm with your controllers and follow along with the steps in real time.</p>
+                    </div>
+                </li>
+                <li class="flex gap-6 items-start">
+                    <span class="shrink-0 w-10 h-10 rounded-full bg-jukun-royal text-white font-serif font-bold flex items-center justify-center">4</span>
+                    <div>
+                        <h4 class="font-bold text-jukun-ink text-lg mb-1">Learn the history behind it</h4>
+                        <p class="text-gray-600">Tap interactive nodes for spoken history on the attire, the music, and the Kwararafa lineage.</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="py-20 bg-jukun-royaldeep">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-serif font-bold text-white mb-3">Compatible With Your Setup</h2>
+            <p class="text-blue-100 mb-10">Standalone or tethered &mdash; JukunVR runs on the headsets people already own.</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="bg-white/5 border border-white/10 rounded-xl px-8 py-6 flex items-center gap-3 text-white">
+                    <i class="fa-brands fa-meta text-2xl text-jukun-gold"></i> Meta Quest 2 / 3 / Pro
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-xl px-8 py-6 flex items-center gap-3 text-white">
+                    <i class="fa-brands fa-windows text-2xl text-jukun-gold"></i> PCVR (Windows 10/11)
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-xl px-8 py-6 flex items-center gap-3 text-white">
+                    <i class="fa-solid fa-headset text-2xl text-jukun-gold"></i> Pico 4
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="video-modal" class="fixed inset-0 z-[100] hidden bg-jukun-ink/90 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative w-full max-w-4xl bg-black rounded-xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300" id="video-container">
+            <button onclick="closeVideoModal()" class="absolute -top-10 right-0 text-white hover:text-jukun-gold text-sm p-2 z-10 focus:outline-none">
+                <i class="fa-solid fa-xmark"></i> Close
+            </button>
+            <div class="aspect-video bg-gray-900 flex flex-col items-center justify-center relative">
+                <i class="fa-solid fa-play text-6xl text-jukun-gold/50 mb-4"></i>
+                <p class="text-gray-400 font-serif">VR Experience Trailer Placeholder</p>
+                <div class="absolute bottom-4 right-4 text-xs text-gray-500">Footage from Wukari performances would play here</div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-jukun-ink text-gray-400">
+        <div class="woven-band"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div class="md:col-span-2">
+                    <a href="index.html" class="flex items-center gap-3 mb-4">
+                        <span class="crest"><i class="fa-solid fa-vr-cardboard text-jukun-gold text-lg"></i></span>
+                        <span class="font-serif font-bold text-xl text-white tracking-wider">JUKUN<span class="text-jukun-gold">VR</span></span>
+                    </a>
+                    <p class="text-sm max-w-sm leading-relaxed">
+                        A project dedicated to the digital preservation of the Jukun Kingdom's functional dance
+                        and music traditions &mdash; recorded in Wukari, Taraba State, and rebuilt in virtual reality
+                        for a global audience.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-xs">Explore</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="heritage.html" class="hover:text-jukun-gold transition-colors">The Heritage</a></li>
+                        <li><a href="experience.html" class="hover:text-jukun-gold transition-colors">The VR Experience</a></li>
+                        <li><a href="download.html" class="hover:text-jukun-gold transition-colors">Download</a></li>
+                        <li><a href="contact.html" class="hover:text-jukun-gold transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-xs">Supported By</h4>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-white/5 rounded flex items-center justify-center text-[10px] text-center p-1 border border-white/10 leading-tight">Taraba<br>Arts</div>
+                        <div class="w-12 h-12 bg-white/5 rounded flex items-center justify-center text-[10px] text-center p-1 border border-white/10 leading-tight">Tech<br>Fund</div>
+                    </div>
+                    <p class="text-xs mt-6">&copy; <span id="year"></span> JukunVR Project.<br>Built for presentation purposes.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) { navbar.classList.add('shadow-lg'); }
+            else { navbar.classList.remove('shadow-lg'); }
+        });
+
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        const modal = document.getElementById('video-modal');
+        const container = document.getElementById('video-container');
+        function openVideoModal() {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0'); modal.classList.add('opacity-100');
+                container.classList.remove('scale-95'); container.classList.add('scale-100');
+            }, 10);
+        }
+        function closeVideoModal() {
+            modal.classList.remove('opacity-100'); modal.classList.add('opacity-0');
+            container.classList.remove('scale-100'); container.classList.add('scale-95');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        }
+        modal.addEventListener('click', (e) => { if (e.target === modal) closeVideoModal(); });
+    </script>
+
+</body>
+</html>
