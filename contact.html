@@ -97,7 +97,7 @@
     </style>
 </head>
 
-<body class="font-sans antialiased overflow-x-hidden text-jukun-ink">
+<body class="font-sans antialiased overflow-x-hidden text-jukun-ink" data-page="contact">
 
     <nav class="fixed w-full z-50 bg-jukun-royaldeep/95 backdrop-blur-sm transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -107,13 +107,13 @@
                     <span class="font-serif font-bold text-xl text-white tracking-wider">JUKUN<span class="text-jukun-gold">VR</span></span>
                 </a>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium">Home</a>
-                    <a href="heritage.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium">Heritage</a>
-                    <a href="experience.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium">VR Experience</a>
-                    <a href="download.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium">Download</a>
-                    <a href="contact.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium active text-white">Contact</a>
+                    <a href="index.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium"><span data-i18n="shared.navHome">Home</span></a>
+                    <a href="heritage.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium"><span data-i18n="shared.navHeritage">Heritage</span></a>
+                    <a href="experience.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium"><span data-i18n="shared.navExperience">VR Experience</span></a>
+                    <a href="download.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium"><span data-i18n="shared.navDownload">Download</span></a>
+                    <a href="contact.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium active text-white"><span data-i18n="shared.navContact">Contact</span></a>
                     <a href="download.html" class="bg-jukun-gold text-jukun-ink px-6 py-2 rounded-full font-bold hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(212,175,55,0.35)] hover:shadow-[0_0_25px_rgba(212,175,55,0.55)] transform hover:-translate-y-0.5">
-                        Get the App
+                        <span data-i18n="shared.navGetApp">Get the App</span>
                     </a>
                 </div>
                 <div class="md:hidden flex items-center">
@@ -125,12 +125,12 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-jukun-royaldeep border-t border-white/10">
             <div class="px-4 pt-3 pb-4 space-y-1">
-                <a href="index.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg">Home</a>
-                <a href="heritage.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg">Heritage</a>
-                <a href="experience.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg">VR Experience</a>
-                <a href="download.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg">Download</a>
-                <a href="contact.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg text-jukun-gold">Contact</a>
-                <a href="download.html" class="block px-4 py-3 text-base font-bold text-jukun-ink bg-jukun-gold rounded-lg mt-3 text-center">Get the App</a>
+                <a href="index.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg"><span data-i18n="shared.navHome">Home</span></a>
+                <a href="heritage.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg"><span data-i18n="shared.navHeritage">Heritage</span></a>
+                <a href="experience.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg"><span data-i18n="shared.navExperience">VR Experience</span></a>
+                <a href="download.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg"><span data-i18n="shared.navDownload">Download</span></a>
+                <a href="contact.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg text-jukun-gold"><span data-i18n="shared.navContact">Contact</span></a>
+                <a href="download.html" class="block px-4 py-3 text-base font-bold text-jukun-ink bg-jukun-gold rounded-lg mt-3 text-center"><span data-i18n="shared.navGetApp">Get the App</span></a>
             </div>
         </div>
         <div class="woven-band-thin"></div>
@@ -139,8 +139,8 @@
     <header class="relative pt-40 pb-24 bg-jukun-royal overflow-hidden">
         <div class="absolute inset-0 opacity-[0.07] bg-[radial-gradient(circle_at_70%_30%,white,transparent_40%)]"></div>
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <span class="text-jukun-gold font-semibold tracking-[0.2em] uppercase text-sm">Contact</span>
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white mt-4 leading-tight">
+            <span class="text-jukun-gold font-semibold tracking-[0.2em] uppercase text-sm" data-i18n="contact.kicker">Contact</span>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white mt-4 leading-tight" data-i18n="contact.title">
                 Reach the <span class="text-jukun-gold">JukunVR</span> Team
             </h1>
         </div>
@@ -151,52 +151,52 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-5 gap-10">
                 <div class="md:col-span-3 bg-white rounded-3xl shadow-xl border border-jukun-royal/10 p-8 md:p-10">
-                    <h2 class="text-2xl font-serif font-bold text-jukun-ink mb-6">Send a Message</h2>
+                    <h2 class="text-2xl font-serif font-bold text-jukun-ink mb-6" data-i18n="contact.formTitle">Send a Message</h2>
                     <form class="space-y-5" onsubmit="event.preventDefault(); document.getElementById('form-success').classList.remove('hidden'); this.reset();">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1.5" for="name">Name</label>
-                                <input id="name" type="text" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-jukun-royal focus:ring-2 focus:ring-jukun-royal/20 outline-none transition-all" placeholder="Your name">
+                                <label class="block text-sm font-medium text-gray-700 mb-1.5" for="name" data-i18n="contact.nameLabel">Name</label>
+                                <input id="name" type="text" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-jukun-royal focus:ring-2 focus:ring-jukun-royal/20 outline-none transition-all" placeholder="Your name" data-i18n="contact.namePlaceholder" data-i18n-attr="placeholder">
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1.5" for="email">Email</label>
-                                <input id="email" type="email" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-jukun-royal focus:ring-2 focus:ring-jukun-royal/20 outline-none transition-all" placeholder="you@example.com">
+                                <label class="block text-sm font-medium text-gray-700 mb-1.5" for="email" data-i18n="contact.emailLabel">Email</label>
+                                <input id="email" type="email" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-jukun-royal focus:ring-2 focus:ring-jukun-royal/20 outline-none transition-all" placeholder="you@example.com" data-i18n="contact.emailPlaceholder" data-i18n-attr="placeholder">
                             </div>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1.5" for="topic">Topic</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-1.5" for="topic" data-i18n="contact.topicLabel">Topic</label>
                             <select id="topic" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-jukun-royal focus:ring-2 focus:ring-jukun-royal/20 outline-none transition-all bg-white">
-                                <option>Installation help</option>
-                                <option>Cultural accuracy / feedback</option>
-                                <option>Press &amp; partnerships</option>
-                                <option>Something else</option>
+                                <option data-i18n="contact.topic1">Installation help</option>
+                                <option data-i18n="contact.topic2">Cultural accuracy / feedback</option>
+                                <option data-i18n="contact.topic3">Press &amp; partnerships</option>
+                                <option data-i18n="contact.topic4">Something else</option>
                             </select>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1.5" for="message">Message</label>
-                            <textarea id="message" rows="5" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-jukun-royal focus:ring-2 focus:ring-jukun-royal/20 outline-none transition-all resize-none" placeholder="How can we help?"></textarea>
+                            <label class="block text-sm font-medium text-gray-700 mb-1.5" for="message" data-i18n="contact.messageLabel">Message</label>
+                            <textarea id="message" rows="5" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-jukun-royal focus:ring-2 focus:ring-jukun-royal/20 outline-none transition-all resize-none" placeholder="How can we help?" data-i18n="contact.messagePlaceholder" data-i18n-attr="placeholder"></textarea>
                         </div>
                         <button type="submit" class="w-full sm:w-auto px-8 py-3.5 bg-jukun-royal text-white font-bold rounded-full hover:bg-jukun-royaldeep transition-all shadow-lg flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                            <i class="fa-solid fa-paper-plane"></i> <span data-i18n="contact.sendBtn">Send Message</span>
                         </button>
                         <p id="form-success" class="hidden text-green-700 bg-green-50 border border-green-200 rounded-lg px-4 py-3 text-sm">
-                            <i class="fa-solid fa-circle-check mr-1"></i> Thanks &mdash; this is a demo form, but in production your message would be sent to the team now.
+                            <i class="fa-solid fa-circle-check mr-1"></i> <span data-i18n="contact.successMsg">Thanks &mdash; this is a demo form, but in production your message would be sent to the team now.</span>
                         </p>
                     </form>
                 </div>
 
                 <div class="md:col-span-2 space-y-6">
                     <div class="bg-jukun-royaldeep text-white rounded-3xl p-8">
-                        <h3 class="text-jukun-gold font-bold uppercase tracking-wider text-xs mb-4">Based In</h3>
-                        <p class="flex items-center gap-3 mb-3"><i class="fa-solid fa-location-dot text-jukun-gold"></i> Wukari, Taraba State, Nigeria</p>
+                        <h3 class="text-jukun-gold font-bold uppercase tracking-wider text-xs mb-4" data-i18n="contact.basedInTitle">Based In</h3>
+                        <p class="flex items-center gap-3 mb-3"><i class="fa-solid fa-location-dot text-jukun-gold"></i> <span data-i18n="contact.basedInLocation">Wukari, Taraba State, Nigeria</span></p>
                         <p class="flex items-center gap-3"><i class="fa-solid fa-envelope text-jukun-gold"></i> hello@jukunvr.example</p>
                     </div>
                     <div class="bg-white rounded-3xl p-8 border border-jukun-royal/10">
-                        <h3 class="text-jukun-royal font-bold uppercase tracking-wider text-xs mb-4">Before You Write</h3>
+                        <h3 class="text-jukun-royal font-bold uppercase tracking-wider text-xs mb-4" data-i18n="contact.beforeTitle">Before You Write</h3>
                         <ul class="space-y-3 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-jukun-royal mt-1"></i> Installation issues: check the guide on the <a href="download.html" class="text-jukun-royal font-semibold hover:underline">Download page</a> first.</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-jukun-royal mt-1"></i> Cultural notes and corrections are always welcome &mdash; this is a living project.</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-jukun-royal mt-1"></i> We reply within a few business days.</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-jukun-royal mt-1"></i> <span data-i18n="contact.before1">Installation issues: check the guide on the <a href="download.html" class="text-jukun-royal font-semibold hover:underline">Download page</a> first.</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-jukun-royal mt-1"></i> <span data-i18n="contact.before2">Cultural notes and corrections are always welcome &mdash; this is a living project.</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-jukun-royal mt-1"></i> <span data-i18n="contact.before3">We reply within a few business days.</span></li>
                         </ul>
                     </div>
                 </div>
@@ -213,28 +213,28 @@
                         <span class="crest"><i class="fa-solid fa-vr-cardboard text-jukun-gold text-lg"></i></span>
                         <span class="font-serif font-bold text-xl text-white tracking-wider">JUKUN<span class="text-jukun-gold">VR</span></span>
                     </a>
-                    <p class="text-sm max-w-sm leading-relaxed">
+                    <p class="text-sm max-w-sm leading-relaxed" data-i18n="shared.footerTagline">
                         A project dedicated to the digital preservation of the Jukun Kingdom's functional dance
                         and music traditions &mdash; recorded in Wukari, Taraba State, and rebuilt in virtual reality
                         for a global audience.
                     </p>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-xs">Explore</h4>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-xs"><span data-i18n="shared.footerExplore">Explore</span></h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="heritage.html" class="hover:text-jukun-gold transition-colors">The Heritage</a></li>
-                        <li><a href="experience.html" class="hover:text-jukun-gold transition-colors">The VR Experience</a></li>
-                        <li><a href="download.html" class="hover:text-jukun-gold transition-colors">Download</a></li>
-                        <li><a href="contact.html" class="hover:text-jukun-gold transition-colors">Contact</a></li>
+                        <li><a href="heritage.html" class="hover:text-jukun-gold transition-colors"><span data-i18n="shared.footerHeritageLink">The Heritage</span></a></li>
+                        <li><a href="experience.html" class="hover:text-jukun-gold transition-colors"><span data-i18n="shared.footerExperienceLink">The VR Experience</span></a></li>
+                        <li><a href="download.html" class="hover:text-jukun-gold transition-colors"><span data-i18n="shared.navDownload">Download</span></a></li>
+                        <li><a href="contact.html" class="hover:text-jukun-gold transition-colors"><span data-i18n="shared.navContact">Contact</span></a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-xs">Supported By</h4>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-xs"><span data-i18n="shared.footerSupportedBy">Supported By</span></h4>
                     <div class="flex items-center gap-3">
                         <div class="w-12 h-12 bg-white/5 rounded flex items-center justify-center text-[10px] text-center p-1 border border-white/10 leading-tight">Taraba<br>Arts</div>
                         <div class="w-12 h-12 bg-white/5 rounded flex items-center justify-center text-[10px] text-center p-1 border border-white/10 leading-tight">Tech<br>Fund</div>
                     </div>
-                    <p class="text-xs mt-6">&copy; <span id="year"></span> JukunVR Project.<br>Built for presentation purposes.</p>
+                    <p class="text-xs mt-6" data-i18n="shared.footerCopyright">&copy; <span id="year"></span> JukunVR Project.<br>Built for presentation purposes.</p>
                 </div>
             </div>
         </div>
@@ -257,5 +257,7 @@
         });
     </script>
 
+    <script src="assets/i18n-data.js"></script>
+    <script src="assets/site.js"></script>
 </body>
 </html>

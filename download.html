@@ -94,10 +94,13 @@
         }
         .nav-link:hover::after, .nav-link.active::after { width: 100%; }
         .nav-link.active { color: #ffffff; }
+
+        .jvr-platform-tab { color: #1B2C8C; }
+        .jvr-platform-tab.active { background: #1B2C8C; color: #ffffff; }
     </style>
 </head>
 
-<body class="font-sans antialiased overflow-x-hidden text-jukun-ink">
+<body class="font-sans antialiased overflow-x-hidden text-jukun-ink" data-page="download">
 
     <nav class="fixed w-full z-50 bg-jukun-royaldeep/95 backdrop-blur-sm transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -107,13 +110,13 @@
                     <span class="font-serif font-bold text-xl text-white tracking-wider">JUKUN<span class="text-jukun-gold">VR</span></span>
                 </a>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium">Home</a>
-                    <a href="heritage.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium">Heritage</a>
-                    <a href="experience.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium">VR Experience</a>
-                    <a href="download.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium active text-white">Download</a>
-                    <a href="contact.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium">Contact</a>
+                    <a href="index.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium"><span data-i18n="shared.navHome">Home</span></a>
+                    <a href="heritage.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium"><span data-i18n="shared.navHeritage">Heritage</span></a>
+                    <a href="experience.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium"><span data-i18n="shared.navExperience">VR Experience</span></a>
+                    <a href="download.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium active text-white"><span data-i18n="shared.navDownload">Download</span></a>
+                    <a href="contact.html" class="nav-link text-gray-200 hover:text-white transition-colors font-medium"><span data-i18n="shared.navContact">Contact</span></a>
                     <a href="download.html" class="bg-jukun-gold text-jukun-ink px-6 py-2 rounded-full font-bold hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(212,175,55,0.35)] hover:shadow-[0_0_25px_rgba(212,175,55,0.55)] transform hover:-translate-y-0.5">
-                        Get the App
+                        <span data-i18n="shared.navGetApp">Get the App</span>
                     </a>
                 </div>
                 <div class="md:hidden flex items-center">
@@ -125,12 +128,12 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-jukun-royaldeep border-t border-white/10">
             <div class="px-4 pt-3 pb-4 space-y-1">
-                <a href="index.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg">Home</a>
-                <a href="heritage.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg">Heritage</a>
-                <a href="experience.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg">VR Experience</a>
-                <a href="download.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg text-jukun-gold">Download</a>
-                <a href="contact.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg">Contact</a>
-                <a href="download.html" class="block px-4 py-3 text-base font-bold text-jukun-ink bg-jukun-gold rounded-lg mt-3 text-center">Get the App</a>
+                <a href="index.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg"><span data-i18n="shared.navHome">Home</span></a>
+                <a href="heritage.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg"><span data-i18n="shared.navHeritage">Heritage</span></a>
+                <a href="experience.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg"><span data-i18n="shared.navExperience">VR Experience</span></a>
+                <a href="download.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg text-jukun-gold"><span data-i18n="shared.navDownload">Download</span></a>
+                <a href="contact.html" class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-jukun-gold hover:bg-white/5 rounded-lg"><span data-i18n="shared.navContact">Contact</span></a>
+                <a href="download.html" class="block px-4 py-3 text-base font-bold text-jukun-ink bg-jukun-gold rounded-lg mt-3 text-center"><span data-i18n="shared.navGetApp">Get the App</span></a>
             </div>
         </div>
         <div class="woven-band-thin"></div>
@@ -139,8 +142,8 @@
     <header class="relative pt-40 pb-20 bg-jukun-royal overflow-hidden">
         <div class="absolute inset-0 opacity-[0.07] bg-[radial-gradient(circle_at_20%_30%,white,transparent_40%)]"></div>
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <span class="text-jukun-gold font-semibold tracking-[0.2em] uppercase text-sm">Download</span>
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white mt-4 leading-tight">
+            <span class="text-jukun-gold font-semibold tracking-[0.2em] uppercase text-sm" data-i18n="download.kicker">Download</span>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white mt-4 leading-tight" data-i18n="download.title">
                 Get the <span class="text-jukun-gold">Application</span>
             </h1>
         </div>
@@ -149,24 +152,37 @@
 
     <section class="py-20 bg-jukun-ivory">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-jukun-royal/10">
+
+            <!-- Platform tabs -->
+            <div class="flex justify-center mb-10">
+                <div class="inline-flex bg-white rounded-full p-1.5 shadow-md border border-jukun-royal/10">
+                    <button type="button" data-platform-tab="pcvr" class="jvr-platform-tab active px-6 py-3 rounded-full font-bold text-sm flex items-center gap-2 transition-all">
+                        <i class="fa-brands fa-meta"></i> <span data-i18n="download.tabPcvr">PCVR / Meta Quest</span>
+                    </button>
+                    <button type="button" data-platform-tab="apk" class="jvr-platform-tab px-6 py-3 rounded-full font-bold text-sm flex items-center gap-2 transition-all">
+                        <i class="fa-brands fa-android"></i> <span data-i18n="download.tabApk">Android APK</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- PCVR / Meta Quest panel -->
+            <div data-platform-panel="pcvr" class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-jukun-royal/10">
                 <div class="grid grid-cols-1 md:grid-cols-5">
                     <div class="md:col-span-3 p-10 md:p-16 flex flex-col justify-center">
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-green-700 font-semibold text-xs mb-6 w-max">
-                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Version 1.0 Available Now
+                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> <span data-i18n="download.badgeAvailable">Version 1.0 Available Now</span>
                         </div>
-                        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-jukun-ink mb-4">Download the App</h2>
-                        <p class="text-gray-600 mb-8">
-                            Get the executable for a compatible PC, or transfer it to your standalone VR headset
-                            (Meta Quest 2/3/Pro or Pico 4).
+                        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-jukun-ink mb-4" data-i18n="download.pcvrCardTitle">PCVR &amp; Meta Quest VR</h2>
+                        <p class="text-gray-600 mb-8" data-i18n="download.pcvrCardDesc">
+                            Get the executable for a compatible PC, or transfer it to your standalone VR headset (Meta Quest 2/3/Pro or Pico 4).
                         </p>
                         <div class="space-y-4">
-                            <button id="download-btn" class="w-full sm:w-auto flex items-center justify-center gap-3 bg-jukun-royal text-white px-8 py-4 rounded-xl font-bold hover:bg-jukun-royaldeep transition-colors group relative overflow-hidden">
+                            <button id="download-btn-pcvr" class="download-btn w-full sm:w-auto flex items-center justify-center gap-3 bg-jukun-royal text-white px-8 py-4 rounded-xl font-bold hover:bg-jukun-royaldeep transition-colors group relative overflow-hidden">
                                 <i class="fa-solid fa-download group-hover:animate-bounce"></i>
-                                <span>Download VR App (.zip, 1.2GB)</span>
+                                <span data-i18n="download.pcvrBtn">Download VR App (.zip, 1.2GB)</span>
                                 <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
                             </button>
-                            <p class="text-xs text-gray-400">
+                            <p class="text-xs text-gray-400" data-i18n="download.pcvrNote">
                                 Requires a VR-ready PC or SideQuest for installation on standalone headsets.
                             </p>
                         </div>
@@ -174,18 +190,57 @@
                     <div class="md:col-span-2 bg-jukun-royaldeep p-10 flex flex-col justify-center text-white relative">
                         <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]"></div>
                         <div class="relative z-10">
-                            <h3 class="text-xl font-bold text-jukun-gold mb-4">System Requirements</h3>
+                            <h3 class="text-xl font-bold text-jukun-gold mb-4" data-i18n="download.pcvrReqTitle">System Requirements</h3>
                             <ul class="space-y-3 text-sm text-blue-100">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-jukun-gold"></i> OS: Windows 10/11</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-jukun-gold"></i> GPU: GTX 1060 or better</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-jukun-gold"></i> RAM: 8GB minimum</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-jukun-gold"></i> Storage: 2GB available</li>
-                                <li class="flex items-center gap-2 pt-4 border-t border-white/20 mt-2"><i class="fa-brands fa-meta text-xl text-jukun-gold"></i> Standalone: Quest 2/3/Pro</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-jukun-gold"></i> <span data-i18n="download.pcvrReq1">OS: Windows 10/11</span></li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-jukun-gold"></i> <span data-i18n="download.pcvrReq2">GPU: GTX 1060 or better</span></li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-jukun-gold"></i> <span data-i18n="download.pcvrReq3">RAM: 8GB minimum</span></li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-jukun-gold"></i> <span data-i18n="download.pcvrReq4">Storage: 2GB available</span></li>
+                                <li class="flex items-center gap-2 pt-4 border-t border-white/20 mt-2"><i class="fa-brands fa-meta text-xl text-jukun-gold"></i> <span data-i18n="download.pcvrReq5">Standalone: Quest 2/3/Pro</span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Android APK panel -->
+            <div data-platform-panel="apk" class="hidden bg-white rounded-3xl shadow-2xl overflow-hidden border border-jukun-royal/10">
+                <div class="grid grid-cols-1 md:grid-cols-5">
+                    <div class="md:col-span-3 p-10 md:p-16 flex flex-col justify-center">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-green-700 font-semibold text-xs mb-6 w-max">
+                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> <span data-i18n="download.badgeAvailable">Version 1.0 Available Now</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-jukun-ink mb-4" data-i18n="download.apkCardTitle">Android APK (Standalone VR)</h2>
+                        <p class="text-gray-600 mb-8" data-i18n="download.apkCardDesc">
+                            Sideload the APK straight onto Quest, Pico, or any Android-based standalone headset &mdash; no PC required.
+                        </p>
+                        <div class="space-y-4">
+                            <button id="download-btn-apk" class="download-btn w-full sm:w-auto flex items-center justify-center gap-3 bg-jukun-royal text-white px-8 py-4 rounded-xl font-bold hover:bg-jukun-royaldeep transition-colors group relative overflow-hidden">
+                                <i class="fa-brands fa-android group-hover:animate-bounce"></i>
+                                <span data-i18n="download.apkBtn">Download APK (.apk, 380MB)</span>
+                                <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
+                            </button>
+                            <p class="text-xs text-gray-400" data-i18n="download.apkNote">
+                                Enable "Install from unknown sources" / Developer Mode on your headset before installing.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 bg-jukun-royaldeep p-10 flex flex-col justify-center text-white relative">
+                        <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]"></div>
+                        <div class="relative z-10">
+                            <h3 class="text-xl font-bold text-jukun-gold mb-4" data-i18n="download.apkReqTitle">Device Requirements</h3>
+                            <ul class="space-y-3 text-sm text-blue-100">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-jukun-gold"></i> <span data-i18n="download.apkReq1">Android 10 (Oculus/Horizon OS) or later</span></li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-jukun-gold"></i> <span data-i18n="download.apkReq2">Snapdragon XR2 or better</span></li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-jukun-gold"></i> <span data-i18n="download.apkReq3">RAM: 6GB minimum</span></li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-jukun-gold"></i> <span data-i18n="download.apkReq4">Storage: 800MB available</span></li>
+                                <li class="flex items-center gap-2 pt-4 border-t border-white/20 mt-2"><i class="fa-brands fa-android text-xl text-jukun-gold"></i> <span data-i18n="download.apkReq5">Compatible: Quest 2/3/Pro, Pico 4</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -194,36 +249,68 @@
     <section class="py-24 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="text-jukun-royal font-semibold tracking-[0.2em] uppercase text-xs">Installation Guide</span>
-                <h2 class="text-4xl font-serif font-bold text-jukun-ink mt-3">From Download to Headset</h2>
+                <span class="text-jukun-royal font-semibold tracking-[0.2em] uppercase text-xs" data-i18n="download.installKicker">Installation Guide</span>
+                <h2 class="text-4xl font-serif font-bold text-jukun-ink mt-3" data-i18n="download.installTitle">From Download to Headset</h2>
             </div>
-            <ol class="space-y-8">
+
+            <ol data-platform-panel="pcvr" class="space-y-8">
                 <li class="flex gap-6 items-start">
                     <span class="shrink-0 w-10 h-10 rounded-full bg-jukun-royal text-white font-serif font-bold flex items-center justify-center">1</span>
                     <div>
-                        <h4 class="font-bold text-jukun-ink text-lg mb-1">Download the .zip</h4>
-                        <p class="text-gray-600">Get the 1.2GB package above and extract it to a folder on your PC.</p>
+                        <h4 class="font-bold text-jukun-ink text-lg mb-1" data-i18n="download.pcvrStep1Title">Download the .zip</h4>
+                        <p class="text-gray-600" data-i18n="download.pcvrStep1Desc">Get the 1.2GB package above and extract it to a folder on your PC.</p>
                     </div>
                 </li>
                 <li class="flex gap-6 items-start">
                     <span class="shrink-0 w-10 h-10 rounded-full bg-jukun-royal text-white font-serif font-bold flex items-center justify-center">2</span>
                     <div>
-                        <h4 class="font-bold text-jukun-ink text-lg mb-1">Choose your setup</h4>
-                        <p class="text-gray-600">Run it directly on a VR-ready PC, or sideload it onto a standalone headset with SideQuest.</p>
+                        <h4 class="font-bold text-jukun-ink text-lg mb-1" data-i18n="download.pcvrStep2Title">Choose your setup</h4>
+                        <p class="text-gray-600" data-i18n="download.pcvrStep2Desc">Run it directly on a VR-ready PC, or sideload it onto a standalone headset with SideQuest.</p>
                     </div>
                 </li>
                 <li class="flex gap-6 items-start">
                     <span class="shrink-0 w-10 h-10 rounded-full bg-jukun-royal text-white font-serif font-bold flex items-center justify-center">3</span>
                     <div>
-                        <h4 class="font-bold text-jukun-ink text-lg mb-1">Put on your headset</h4>
-                        <p class="text-gray-600">Launch JukunVR from your library and you'll arrive at the festival grounds.</p>
+                        <h4 class="font-bold text-jukun-ink text-lg mb-1" data-i18n="download.pcvrStep3Title">Put on your headset</h4>
+                        <p class="text-gray-600" data-i18n="download.pcvrStep3Desc">Launch JukunVR from your library and you'll arrive at the festival grounds.</p>
                     </div>
                 </li>
                 <li class="flex gap-6 items-start">
                     <span class="shrink-0 w-10 h-10 rounded-full bg-jukun-royal text-white font-serif font-bold flex items-center justify-center">4</span>
                     <div>
-                        <h4 class="font-bold text-jukun-ink text-lg mb-1">Need a hand?</h4>
-                        <p class="text-gray-600">Reach the team on the <a href="contact.html" class="text-jukun-royal font-semibold hover:underline">contact page</a> for setup help.</p>
+                        <h4 class="font-bold text-jukun-ink text-lg mb-1" data-i18n="download.step4Title">Need a hand?</h4>
+                        <p class="text-gray-600" data-i18n="download.step4Desc">Reach the team on the <a href="contact.html" class="text-jukun-royal font-semibold hover:underline">contact page</a> for setup help.</p>
+                    </div>
+                </li>
+            </ol>
+
+            <ol data-platform-panel="apk" class="hidden space-y-8">
+                <li class="flex gap-6 items-start">
+                    <span class="shrink-0 w-10 h-10 rounded-full bg-jukun-royal text-white font-serif font-bold flex items-center justify-center">1</span>
+                    <div>
+                        <h4 class="font-bold text-jukun-ink text-lg mb-1" data-i18n="download.apkStep1Title">Download the .apk</h4>
+                        <p class="text-gray-600" data-i18n="download.apkStep1Desc">Get the 380MB file above directly onto your headset's browser, or transfer it from a PC.</p>
+                    </div>
+                </li>
+                <li class="flex gap-6 items-start">
+                    <span class="shrink-0 w-10 h-10 rounded-full bg-jukun-royal text-white font-serif font-bold flex items-center justify-center">2</span>
+                    <div>
+                        <h4 class="font-bold text-jukun-ink text-lg mb-1" data-i18n="download.apkStep2Title">Enable unknown sources</h4>
+                        <p class="text-gray-600" data-i18n="download.apkStep2Desc">In your headset's device settings, allow installs from unknown sources or enable Developer Mode.</p>
+                    </div>
+                </li>
+                <li class="flex gap-6 items-start">
+                    <span class="shrink-0 w-10 h-10 rounded-full bg-jukun-royal text-white font-serif font-bold flex items-center justify-center">3</span>
+                    <div>
+                        <h4 class="font-bold text-jukun-ink text-lg mb-1" data-i18n="download.apkStep3Title">Install and launch</h4>
+                        <p class="text-gray-600" data-i18n="download.apkStep3Desc">Open the .apk from your file manager, install it, then launch JukunVR from your app library.</p>
+                    </div>
+                </li>
+                <li class="flex gap-6 items-start">
+                    <span class="shrink-0 w-10 h-10 rounded-full bg-jukun-royal text-white font-serif font-bold flex items-center justify-center">4</span>
+                    <div>
+                        <h4 class="font-bold text-jukun-ink text-lg mb-1" data-i18n="download.step4Title">Need a hand?</h4>
+                        <p class="text-gray-600" data-i18n="download.step4Desc">Reach the team on the <a href="contact.html" class="text-jukun-royal font-semibold hover:underline">contact page</a> for setup help.</p>
                     </div>
                 </li>
             </ol>
@@ -239,28 +326,28 @@
                         <span class="crest"><i class="fa-solid fa-vr-cardboard text-jukun-gold text-lg"></i></span>
                         <span class="font-serif font-bold text-xl text-white tracking-wider">JUKUN<span class="text-jukun-gold">VR</span></span>
                     </a>
-                    <p class="text-sm max-w-sm leading-relaxed">
+                    <p class="text-sm max-w-sm leading-relaxed" data-i18n="shared.footerTagline">
                         A project dedicated to the digital preservation of the Jukun Kingdom's functional dance
                         and music traditions &mdash; recorded in Wukari, Taraba State, and rebuilt in virtual reality
                         for a global audience.
                     </p>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-xs">Explore</h4>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-xs"><span data-i18n="shared.footerExplore">Explore</span></h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="heritage.html" class="hover:text-jukun-gold transition-colors">The Heritage</a></li>
-                        <li><a href="experience.html" class="hover:text-jukun-gold transition-colors">The VR Experience</a></li>
-                        <li><a href="download.html" class="hover:text-jukun-gold transition-colors">Download</a></li>
-                        <li><a href="contact.html" class="hover:text-jukun-gold transition-colors">Contact</a></li>
+                        <li><a href="heritage.html" class="hover:text-jukun-gold transition-colors"><span data-i18n="shared.footerHeritageLink">The Heritage</span></a></li>
+                        <li><a href="experience.html" class="hover:text-jukun-gold transition-colors"><span data-i18n="shared.footerExperienceLink">The VR Experience</span></a></li>
+                        <li><a href="download.html" class="hover:text-jukun-gold transition-colors"><span data-i18n="shared.navDownload">Download</span></a></li>
+                        <li><a href="contact.html" class="hover:text-jukun-gold transition-colors"><span data-i18n="shared.navContact">Contact</span></a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-xs">Supported By</h4>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-xs"><span data-i18n="shared.footerSupportedBy">Supported By</span></h4>
                     <div class="flex items-center gap-3">
                         <div class="w-12 h-12 bg-white/5 rounded flex items-center justify-center text-[10px] text-center p-1 border border-white/10 leading-tight">Taraba<br>Arts</div>
                         <div class="w-12 h-12 bg-white/5 rounded flex items-center justify-center text-[10px] text-center p-1 border border-white/10 leading-tight">Tech<br>Fund</div>
                     </div>
-                    <p class="text-xs mt-6">&copy; <span id="year"></span> JukunVR Project.<br>Built for presentation purposes.</p>
+                    <p class="text-xs mt-6" data-i18n="shared.footerCopyright">&copy; <span id="year"></span> JukunVR Project.<br>Built for presentation purposes.</p>
                 </div>
             </div>
         </div>
@@ -282,21 +369,39 @@
             link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
         });
 
-        const downloadBtn = document.getElementById('download-btn');
-        if (downloadBtn) {
-            downloadBtn.addEventListener('click', function(e) {
+        document.querySelectorAll('.download-btn').forEach((downloadBtn) => {
+            const isApk = downloadBtn.id === 'download-btn-apk';
+            const fileName = isApk ? 'JukunVR_v1.0.apk' : 'JukunVR_v1.0.zip';
+            downloadBtn.addEventListener('click', function (e) {
                 e.preventDefault();
-                const originalText = this.innerHTML;
+                const originalHTML = this.innerHTML;
                 this.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Preparing download...</span>';
                 this.classList.add('cursor-wait', 'opacity-80');
                 setTimeout(() => {
-                    alert("This is a demo frontend. In the final version, this triggers the download of 'JukunVR_v1.0.zip' from your server.");
-                    this.innerHTML = originalText;
+                    alert("This is a demo frontend. In the final version, this triggers the download of '" + fileName + "' from your server.");
+                    this.innerHTML = originalHTML;
                     this.classList.remove('cursor-wait', 'opacity-80');
                 }, 1800);
             });
+        });
+
+        // Platform tabs: PCVR/Meta Quest vs Android APK
+        const platformTabs = document.querySelectorAll('[data-platform-tab]');
+        const platformPanels = document.querySelectorAll('[data-platform-panel]');
+        function setPlatform(platform) {
+            platformTabs.forEach((tab) => {
+                tab.classList.toggle('active', tab.getAttribute('data-platform-tab') === platform);
+            });
+            platformPanels.forEach((panel) => {
+                panel.classList.toggle('hidden', panel.getAttribute('data-platform-panel') !== platform);
+            });
         }
+        platformTabs.forEach((tab) => {
+            tab.addEventListener('click', () => setPlatform(tab.getAttribute('data-platform-tab')));
+        });
     </script>
 
+    <script src="assets/i18n-data.js"></script>
+    <script src="assets/site.js"></script>
 </body>
 </html>
